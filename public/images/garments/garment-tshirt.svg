@@ -1,0 +1,7 @@
+<svg width="1024" height="1024" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1024" height="1024" fill="transparent"/>
+  <path d="M 212 312 L 312 212 L 512 212 L 712 212 L 812 312 L 812 912 L 212 912 Z" fill="#9333ea" stroke="#7e22ce" stroke-width="4"/>
+  <circle cx="512" cy="400" r="100" fill="#a855f7"/>
+  <rect x="412" y="520" width="200" height="350" rx="10" fill="#a855f7"/>
+  <text x="512" y="980" font-family="Arial" font-size="36" fill="#6b7280" text-anchor="middle">Purple T-Shirt</text>
+</svg>

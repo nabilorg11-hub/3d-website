@@ -1,0 +1,11 @@
+<svg width="400" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="600" fill="#f3f4f6"/>
+  <path d="M 90 140 L 140 90 L 260 90 L 310 140 L 310 480 L 90 480 Z" fill="#3b82f6" stroke="#2563eb" stroke-width="2"/>
+  <circle cx="200" cy="170" r="42" fill="#60a5fa"/>
+  <rect x="155" y="230" width="90" height="190" rx="5" fill="#60a5fa"/>
+  <line x1="200" y1="230" x2="200" y2="420" stroke="#2563eb" stroke-width="3"/>
+  <circle cx="180" cy="270" r="5" fill="#1e40af"/>
+  <circle cx="180" cy="310" r="5" fill="#1e40af"/>
+  <circle cx="180" cy="350" r="5" fill="#1e40af"/>
+  <text x="200" y="540" font-family="Arial" font-size="20" fill="#6b7280" text-anchor="middle">Denim Jacket</text>
+</svg>

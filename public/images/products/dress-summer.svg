@@ -1,0 +1,8 @@
+<svg width="400" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="600" fill="#f3f4f6"/>
+  <path d="M 120 140 L 160 100 L 240 100 L 280 140 L 320 500 L 80 500 Z" fill="#ec4899" stroke="#db2777" stroke-width="2"/>
+  <circle cx="200" cy="160" r="38" fill="#f9a8d4"/>
+  <rect x="170" y="210" width="60" height="30" fill="#f9a8d4"/>
+  <path d="M 140 240 L 200 450 L 260 240 Z" fill="#f472b6"/>
+  <text x="200" y="560" font-family="Arial" font-size="20" fill="#6b7280" text-anchor="middle">Summer Dress</text>
+</svg>
