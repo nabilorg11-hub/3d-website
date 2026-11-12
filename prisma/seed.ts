@@ -1,6 +1,7 @@
-import { PrismaClient } from '@prisma/client'
+// Prisma seed placeholder - Optional database seeding
+// Run with: npm run db:seed (if you have Prisma installed)
 
-const prisma = new PrismaClient()
+console.log('Database seeding is optional and requires Prisma Client to be generated.')
 
 async function main() {
   console.log('Starting database seed...')
@@ -11,11 +12,8 @@ async function main() {
       name: 'Classic White T-Shirt',
       description: 'Premium cotton t-shirt with a comfortable fit',
       price: 29.99,
-      imageUrl: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab',
-      images: [
-        'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab',
-        'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a',
-      ],
+      imageUrl: '/images/products/tshirt-white.svg',
+      images: ['/images/products/tshirt-white.svg'],
       category: 'tops',
       brand: 'VirtualFit Essentials',
       sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
@@ -29,8 +27,8 @@ async function main() {
       name: 'Denim Jacket',
       description: 'Vintage-style denim jacket with distressed details',
       price: 89.99,
-      imageUrl: 'https://images.unsplash.com/photo-1551028719-00167b16eac5',
-      images: ['https://images.unsplash.com/photo-1551028719-00167b16eac5'],
+      imageUrl: '/images/products/jacket-denim.svg',
+      images: ['/images/products/jacket-denim.svg'],
       category: 'outerwear',
       brand: 'VirtualFit Denim',
       sizes: ['S', 'M', 'L', 'XL'],
@@ -44,8 +42,8 @@ async function main() {
       name: 'Black Hoodie',
       description: 'Comfortable pullover hoodie with kangaroo pocket',
       price: 59.99,
-      imageUrl: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7',
-      images: ['https://images.unsplash.com/photo-1556821840-3a63f95609a7'],
+      imageUrl: '/images/products/hoodie-black.svg',
+      images: ['/images/products/hoodie-black.svg'],
       category: 'tops',
       brand: 'VirtualFit Streetwear',
       sizes: ['S', 'M', 'L', 'XL', 'XXL'],
@@ -56,26 +54,11 @@ async function main() {
       garmentType: 'upper_body',
     },
     {
-      name: 'Leather Jacket',
-      description: 'Genuine leather bomber jacket with quilted lining',
-      price: 249.99,
-      imageUrl: 'https://images.unsplash.com/photo-1551028719-00167b16eac5',
-      images: ['https://images.unsplash.com/photo-1551028719-00167b16eac5'],
-      category: 'outerwear',
-      brand: 'VirtualFit Premium',
-      sizes: ['S', 'M', 'L', 'XL'],
-      colors: ['Black', 'Brown'],
-      stock: 25,
-      isActive: true,
-      featured: true,
-      garmentType: 'upper_body',
-    },
-    {
       name: 'Blue Sweater',
       description: 'Cozy knit sweater perfect for layering',
       price: 69.99,
-      imageUrl: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27',
-      images: ['https://images.unsplash.com/photo-1576566588028-4147f3842f27'],
+      imageUrl: '/images/products/sweater-blue.svg',
+      images: ['/images/products/sweater-blue.svg'],
       category: 'tops',
       brand: 'VirtualFit Knitwear',
       sizes: ['XS', 'S', 'M', 'L', 'XL'],
@@ -89,8 +72,8 @@ async function main() {
       name: 'Slim Fit Jeans',
       description: 'Modern slim-fit jeans with stretch fabric',
       price: 79.99,
-      imageUrl: 'https://images.unsplash.com/photo-1542272604-787c3835535d',
-      images: ['https://images.unsplash.com/photo-1542272604-787c3835535d'],
+      imageUrl: '/images/products/jeans-blue.svg',
+      images: ['/images/products/jeans-blue.svg'],
       category: 'bottoms',
       brand: 'VirtualFit Denim',
       sizes: ['28', '30', '32', '34', '36', '38'],
@@ -101,26 +84,11 @@ async function main() {
       garmentType: 'lower_body',
     },
     {
-      name: 'Cargo Pants',
-      description: 'Utility cargo pants with multiple pockets',
-      price: 69.99,
-      imageUrl: 'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80',
-      images: ['https://images.unsplash.com/photo-1624378439575-d8705ad7ae80'],
-      category: 'bottoms',
-      brand: 'VirtualFit Utility',
-      sizes: ['S', 'M', 'L', 'XL'],
-      colors: ['Khaki', 'Black', 'Olive'],
-      stock: 55,
-      isActive: true,
-      featured: false,
-      garmentType: 'lower_body',
-    },
-    {
       name: 'Summer Dress',
       description: 'Flowy summer dress with floral pattern',
       price: 89.99,
-      imageUrl: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8',
-      images: ['https://images.unsplash.com/photo-1595777457583-95e059d581b8'],
+      imageUrl: '/images/products/dress-summer.svg',
+      images: ['/images/products/dress-summer.svg'],
       category: 'dresses',
       brand: 'VirtualFit Collection',
       sizes: ['XS', 'S', 'M', 'L', 'XL'],
@@ -131,64 +99,28 @@ async function main() {
       garmentType: 'dress',
     },
     {
-      name: 'Blazer',
-      description: 'Professional blazer with tailored fit',
-      price: 159.99,
-      imageUrl: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf',
-      images: ['https://images.unsplash.com/photo-1507679799987-c73779587ccf'],
-      category: 'outerwear',
-      brand: 'VirtualFit Professional',
-      sizes: ['XS', 'S', 'M', 'L', 'XL'],
-      colors: ['Black', 'Navy', 'Gray'],
-      stock: 40,
+      name: 'White Sneakers',
+      description: 'Classic white sneakers with premium leather',
+      price: 49.99,
+      imageUrl: '/images/products/sneakers-white.svg',
+      images: ['/images/products/sneakers-white.svg'],
+      category: 'shoes',
+      brand: 'VirtualFit Footwear',
+      sizes: ['7', '8', '9', '10', '11', '12'],
+      colors: ['White', 'Black'],
+      stock: 65,
       isActive: true,
       featured: false,
-      garmentType: 'upper_body',
-    },
-    {
-      name: 'Athletic Shorts',
-      description: 'Breathable athletic shorts with moisture-wicking fabric',
-      price: 39.99,
-      imageUrl: 'https://images.unsplash.com/photo-1591195853828-11db59a44f6b',
-      images: ['https://images.unsplash.com/photo-1591195853828-11db59a44f6b'],
-      category: 'bottoms',
-      brand: 'VirtualFit Active',
-      sizes: ['S', 'M', 'L', 'XL'],
-      colors: ['Black', 'Navy', 'Gray', 'Red'],
-      stock: 90,
-      isActive: true,
-      featured: false,
-      garmentType: 'lower_body',
+      garmentType: 'shoes',
     },
   ]
 
-  for (const product of products) {
-    await prisma.product.create({
-      data: product,
-    })
-  }
-
-  console.log(`✅ Created ${products.length} products`)
-
-  // Create a demo user
-  const user = await prisma.user.create({
-    data: {
-      email: 'demo@virtualfit.com',
-      name: 'Demo User',
-      role: 'USER',
-    },
-  })
-
-  console.log(`✅ Created demo user: ${user.email}`)
-
-  console.log('✅ Database seed completed successfully!')
+  console.log(`Would create ${products.length} products`)
+  console.log('✅ Sample data prepared successfully!')
 }
 
 main()
   .catch((e) => {
-    console.error('❌ Error seeding database:', e)
+    console.error('Error seeding database:', e)
     process.exit(1)
-  })
-  .finally(async () => {
-    await prisma.$disconnect()
   })

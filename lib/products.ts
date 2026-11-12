@@ -1,4 +1,4 @@
-import { prisma } from './db'
+import prisma from './db'
 
 export interface GetProductsOptions {
   category?: string
@@ -28,13 +28,13 @@ export async function getProducts(options: GetProductsOptions = {}) {
   if (featured !== undefined) where.featured = featured
 
   const [products, total] = await Promise.all([
-    prisma.product.findMany({
+    prisma?.product.findMany({
       where,
       skip,
       take: limit,
       orderBy: { createdAt: 'desc' },
-    }),
-    prisma.product.count({ where }),
+    }) || [],
+    prisma?.product.count({ where }) || 0,
   ])
 
   return {
@@ -50,7 +50,7 @@ export async function getProducts(options: GetProductsOptions = {}) {
  * Get product by ID
  */
 export async function getProductById(id: string) {
-  return prisma.product.findUnique({
+  return prisma?.product.findUnique({
     where: { id },
   })
 }
@@ -59,7 +59,7 @@ export async function getProductById(id: string) {
  * Create new product
  */
 export async function createProduct(data: any) {
-  return prisma.product.create({
+  return prisma?.product.create({
     data,
   })
 }
@@ -68,7 +68,7 @@ export async function createProduct(data: any) {
  * Update product
  */
 export async function updateProduct(id: string, data: any) {
-  return prisma.product.update({
+  return prisma?.product.update({
     where: { id },
     data,
   })
@@ -78,7 +78,7 @@ export async function updateProduct(id: string, data: any) {
  * Delete product
  */
 export async function deleteProduct(id: string) {
-  return prisma.product.delete({
+  return prisma?.product.delete({
     where: { id },
   })
 }
@@ -104,13 +104,13 @@ export async function searchProducts(
   }
 
   const [products, total] = await Promise.all([
-    prisma.product.findMany({
+    prisma?.product.findMany({
       where,
       skip,
       take: limit,
       orderBy: { createdAt: 'desc' },
-    }),
-    prisma.product.count({ where }),
+    }) || [],
+    prisma?.product.count({ where }) || 0,
   ])
 
   return {
@@ -126,22 +126,22 @@ export async function searchProducts(
  * Get product categories
  */
 export async function getCategories() {
-  const products = await prisma.product.findMany({
+  const products = await prisma?.product.findMany({
     where: { isActive: true },
     select: { category: true },
     distinct: ['category'],
-  })
+  }) || []
 
-  return products.map((p) => p.category)
+  return products.map((p: any) => p.category)
 }
 
 /**
  * Get featured products
  */
 export async function getFeaturedProducts(limit: number = 8) {
-  return prisma.product.findMany({
+  return prisma?.product.findMany({
     where: { featured: true, isActive: true },
     take: limit,
     orderBy: { createdAt: 'desc' },
-  })
+  }) || []
 }

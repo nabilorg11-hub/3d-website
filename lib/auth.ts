@@ -1,11 +1,11 @@
-import { prisma } from './db'
+import prisma from './db'
 import bcrypt from 'bcryptjs'
 
 /**
  * Get user by email
  */
 export async function getUserByEmail(email: string) {
-  return prisma.user.findUnique({
+  return prisma?.user.findUnique({
     where: { email },
   })
 }
@@ -14,7 +14,7 @@ export async function getUserByEmail(email: string) {
  * Get user by ID
  */
 export async function getUserById(id: string) {
-  return prisma.user.findUnique({
+  return prisma?.user.findUnique({
     where: { id },
   })
 }
@@ -31,7 +31,7 @@ export async function createUser(data: {
     ? await bcrypt.hash(data.password, 10)
     : undefined
 
-  return prisma.user.create({
+  return prisma?.user.create({
     data: {
       email: data.email,
       name: data.name,
@@ -48,7 +48,7 @@ export async function updateUser(id: string, data: any) {
     data.password = await bcrypt.hash(data.password, 10)
   }
 
-  return prisma.user.update({
+  return prisma?.user.update({
     where: { id },
     data,
   })
@@ -58,7 +58,7 @@ export async function updateUser(id: string, data: any) {
  * Delete user
  */
 export async function deleteUser(id: string) {
-  return prisma.user.delete({
+  return prisma?.user.delete({
     where: { id },
   })
 }

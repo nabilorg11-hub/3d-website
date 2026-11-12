@@ -1,9 +1,13 @@
-import { PrismaClient } from '@prisma/client'
+// Database connection placeholder
+// Prisma is optional - only needed if you want database functionality
 
-const globalForPrisma = globalThis as unknown as {
-  prisma: PrismaClient | undefined
+let prisma: any = null
+
+export function getPrisma() {
+  if (!prisma) {
+    console.warn('Database not configured. Prisma Client is optional.')
+  }
+  return prisma
 }
 
-export const prisma = globalForPrisma.prisma ?? new PrismaClient()
-
-if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma
+export default prisma

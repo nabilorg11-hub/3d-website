@@ -14,7 +14,12 @@ export async function uploadImage(
   folder: string = 'virtualfit'
 ): Promise<{ url: string; publicId: string }> {
   try {
-    const result = await cloudinary.uploader.upload(file, {
+    // Convert Buffer to base64 data URI if needed
+    const fileToUpload = Buffer.isBuffer(file)
+      ? `data:image/jpeg;base64,${file.toString('base64')}`
+      : file
+
+    const result = await cloudinary.uploader.upload(fileToUpload, {
       folder,
       resource_type: 'auto',
       transformation: [
